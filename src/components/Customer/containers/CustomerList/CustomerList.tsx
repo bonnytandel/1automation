@@ -1,39 +1,30 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable-line */
-/*eslint no-unused-expressions: "error"*/
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { TableProperty } from '../../model/customer.model';
 import { fetchCustomers } from './middleware/customerListMiddleware';
 
-
-
 import CustomerListPresentation from './presentation/CustomerListPresentation/CustomerListPresentation';
 
 
-class CustomerList extends Component <any, any> {
+class CustomerList extends Component<any, any> {
     constructor(props: any) {
-        debugger
         super(props);
-        
     }
 
     componentWillMount() {
         // this.props.getRepairOrder();
         console.log(this.props);
-        
     }
     render() {
         return (
-            <CustomerListPresentation  />
+            <CustomerListPresentation />
         )
     }
 }
 
 const mapStateToProps = (state: any) => ({
-    // customers: state.customer.customerList.data
+    customers: state.customer.customerList.data
 })
 
 // const mapDispatchToProps = (dispatch: any) => ({
@@ -41,17 +32,16 @@ const mapStateToProps = (state: any) => ({
 //     fetchCustomer: () => dispatch(fetchCustomers()),
 // })
 const mapDispatchToProps = (dispatch: any) => ({
-    // getRepairOrder: () => dispatch(fetchCustomers()),
-    
-})
+    getRepairOrder: () => dispatch(fetchCustomers()),
 
+})
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(CustomerList);
 
-const customerList = connect(mapStateToProps, mapDispatchToProps)(CustomerList);
+// const customerList = connect(mapStateToProps, mapDispatchToProps)(CustomerList);
 
-export { customerList as CustomerList };
+// export { customerList as CustomerList };
 

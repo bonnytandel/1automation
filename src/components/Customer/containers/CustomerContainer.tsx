@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import CustomerList from './containers/CustomerList';
+import CustomerList from './CustomerList/CustomerList';
 
-
-class Customer extends Component <any, any>{
+class CustomerContainer extends Component <any, any>{
     constructor(props: any) {
         super(props);
     }
@@ -11,4 +10,4 @@ class Customer extends Component <any, any>{
     }
 }
 
-export default Customer
+export default CustomerContainer

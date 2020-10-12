@@ -1,5 +1,4 @@
-import Customer from './Customer';
-import customerReducer from './reducer/customerReducer';
+import Customer from './containers/CustomerContainer';
+
 
 export default Customer;
-export { customerReducer }
