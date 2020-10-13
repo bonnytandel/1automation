@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import CustomerList from './CustomerList/CustomerList';
+import CustomerRouting from '../CustomerRouting';
 
 class CustomerContainer extends Component <any, any>{
     constructor(props: any) {
         super(props);
     }
     render() {
-            return <CustomerList />
+            return <CustomerRouting />
     }
 }
 

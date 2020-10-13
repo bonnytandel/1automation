@@ -10,15 +10,13 @@ import CustomerListPresentation from './presentation/CustomerListPresentation/Cu
 class CustomerList extends Component<any, any> {
     constructor(props: any) {
         super(props);
+        this.props.fetchCustomer();
     }
 
-    componentWillMount() {
-        // this.props.getRepairOrder();
-        console.log(this.props);
-    }
     render() {
+        const { customers } = this.props;
         return (
-            <CustomerListPresentation />
+            <CustomerListPresentation customers={customers}/>
         )
     }
 }
@@ -27,21 +25,14 @@ const mapStateToProps = (state: any) => ({
     customers: state.customer.customerList.data
 })
 
-// const mapDispatchToProps = (dispatch: any) => ({
-
-//     fetchCustomer: () => dispatch(fetchCustomers()),
-// })
 const mapDispatchToProps = (dispatch: any) => ({
-    getRepairOrder: () => dispatch(fetchCustomers()),
-
+    fetchCustomer: () => dispatch(fetchCustomers()),
 })
+
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(CustomerList);
 
-// const customerList = connect(mapStateToProps, mapDispatchToProps)(CustomerList);
-
-// export { customerList as CustomerList };
 
